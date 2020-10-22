@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import './App.css';
 import LandingPage from './screens/landing-page/LandingPage';
+import RegisterAccount from './screens/register-account/RegisterAccount';
 import { registerUser } from './services/auth';
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
       <Switch>
         <Route exact path='/'>
           <LandingPage />
+        </Route>
+        <Route path='/register-account'>
+          <RegisterAccount handleRegister={handleRegister} />
         </Route>
       </Switch>
     </div>
