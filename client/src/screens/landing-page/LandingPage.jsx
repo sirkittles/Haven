@@ -8,8 +8,8 @@ const LandingPage = () => {
         <h1>Welcome!</h1>
         <img
           src={`${process.env.PUBLIC_URL}/assets/logo.png`}
-          alt="star-rating"
-          className="star-rating"
+          alt="main-logo"
+          className="main-logo"
         />
         <h4>Show off your room</h4>
         <Link to="/register-account">

@@ -23,10 +23,10 @@ const RegisterAccount = (props) => {
         e.preventDefault();
         handleRegister(formData);
       }}>
-        {
+        {/* {
           error &&
           <p>{error}</p>
-        }
+        } */}
         {/* <label>
           First Name:
            <input

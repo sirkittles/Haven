@@ -1,8 +1,15 @@
-import React from 'react';
+import React from "react";
+import Layout from "../../components/shared/layout/Layout";
 
-const HomePage = () => {
+const HomePage = (props) => {
+  const { currentUser, handleLogout } = props;
   return (
-    <h2>This is the homepage</h2>
+    <Layout
+      currentUser={currentUser}
+      handleLogout={handleLogout}
+    >
+      <h2>This is the homepage</h2>
+    </Layout>
   )
 }
 

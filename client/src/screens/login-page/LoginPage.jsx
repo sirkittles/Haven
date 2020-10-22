@@ -7,7 +7,7 @@ const LoginPage = (props) => {
     password: ""
   });
   const { username, password } = formData;
-  const { error, handleLogin } = props;
+  const { handleLogin } = props;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,10 +23,10 @@ const LoginPage = (props) => {
         e.preventDefault();
         handleLogin(formData);
       }}>
-        {
+        {/* {
           error &&
           <p>{error}</p>
-        }
+        } */}
         <h2>Login</h2>
         <label>Username:
          <input

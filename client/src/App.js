@@ -32,10 +32,6 @@ function App() {
 
   return (
     <div className="App">
-      <Layout
-        currentUser={currentUser}
-        handleLogout={handleLogout}
-      >
         <Switch>
           <Route exact path="/">
             <LandingPage />
@@ -47,10 +43,12 @@ function App() {
             <LoginPage handleLogin={handleLogin} />
           </Route>
           <Route path="/homepage">
-            <HomePage />
+            <HomePage
+              currentUser={currentUser}
+              handleLogout={handleLogout}
+            />
           </Route>
         </Switch>
-      </Layout>
     </div>
   );
 }
