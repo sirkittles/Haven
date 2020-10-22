@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import './App.css';
-import { registerUser, loginUser } from './services/auth';
+import { registerUser, loginUser, removeToken } from './services/auth';
 import LandingPage from './screens/landing-page/LandingPage';
 import RegisterAccount from './screens/register-account/RegisterAccount';
 import LoginPage from './screens/login-page/LoginPage';
@@ -21,6 +21,12 @@ function App() {
     const userData = await registerUser(registerData);
     setCurrentUser(userData);
     history.push('/homepage')
+  }
+
+  const handleLogout = () => {
+    setCurrentUser(null);
+    localStorage.removeItem('authToken');
+    removeToken();
   }
 
   return (
