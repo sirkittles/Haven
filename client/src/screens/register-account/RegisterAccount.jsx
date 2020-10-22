@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const RegisterAccount = (props) => {
   const [formData, setFormData] = useState({
@@ -23,7 +23,7 @@ const RegisterAccount = (props) => {
         e.preventDefault();
         handleRegister(formData);
       }}>
-        <label>
+        {/* <label>
           First Name:
            <input
             type="text"
@@ -39,7 +39,7 @@ const RegisterAccount = (props) => {
             name="Last Name"
             onChange={handleChange}
           />
-        </label>
+        </label> */}
         <label>Username:
          <input
             type="text"

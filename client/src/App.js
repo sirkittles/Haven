@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import './App.css';
 import { registerUser, loginUser } from './services/auth';
@@ -31,7 +31,7 @@ function App() {
         <Route path='/register-account'>
           <RegisterAccount handleRegister={handleRegister} />
         </Route>
-        <Route path='login'>
+        <Route path='/login'>
           <LoginPage handleLogin={handleLogin} />
         </Route>
       </Switch>
