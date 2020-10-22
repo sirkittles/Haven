@@ -3,11 +3,17 @@ import { Route, Switch, useHistory } from 'react-router-dom';
 import './App.css';
 import LandingPage from './screens/landing-page/LandingPage';
 import RegisterAccount from './screens/register-account/RegisterAccount';
-import { registerUser } from './services/auth';
+import { registerUser, loginUser } from './services/auth';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const history = useHistory();
+
+  const handleLogin = async (loginData) => {
+    const userData = await loginUser(loginData);
+    setCurrentUser(userData);
+    history.push('/')
+  }
 
   const handleRegister = async (registerData) => {
     const userData = await registerUser(registerData);
