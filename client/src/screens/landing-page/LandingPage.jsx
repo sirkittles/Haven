@@ -7,7 +7,7 @@ const LandingPage = () => {
       <div>
         <h1>Welcome!</h1>
         <h4>Show off your room</h4>
-        <Link to="/create-account">
+        <Link to="/register-account">
           <button>Join Us</button>
         </Link>
       </div>
