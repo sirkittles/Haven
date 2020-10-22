@@ -1,9 +1,10 @@
 import React from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import './App.css';
+import { registerUser, loginUser } from './services/auth';
 import LandingPage from './screens/landing-page/LandingPage';
 import RegisterAccount from './screens/register-account/RegisterAccount';
-import { registerUser, loginUser } from './services/auth';
+import LoginPage from './screens/login-page/LoginPage';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -31,7 +32,7 @@ function App() {
           <RegisterAccount handleRegister={handleRegister} />
         </Route>
         <Route path='login'>
-          <LoginPage />
+          <LoginPage handleLogin={handleLogin} />
         </Route>
       </Switch>
     </div>
