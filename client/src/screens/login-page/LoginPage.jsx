@@ -23,6 +23,10 @@ const LoginPage = (props) => {
         e.preventDefault();
         handleLogin(formData);
       }}>
+        {
+          error &&
+          <p>{error}</p>
+        }
         <h2>Login</h2>
         <label>Username:
          <input
