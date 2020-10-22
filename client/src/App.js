@@ -12,13 +12,13 @@ function App() {
   const handleLogin = async (loginData) => {
     const userData = await loginUser(loginData);
     setCurrentUser(userData);
-    history.push('/')
+    history.push('/homepage')
   }
 
   const handleRegister = async (registerData) => {
     const userData = await registerUser(registerData);
     setCurrentUser(userData);
-    history.pushState('/')
+    history.pushState('/homepage')
   }
 
   return (
@@ -29,6 +29,9 @@ function App() {
         </Route>
         <Route path='/register-account'>
           <RegisterAccount handleRegister={handleRegister} />
+        </Route>
+        <Route path='login'>
+          <LoginPage />
         </Route>
       </Switch>
     </div>
