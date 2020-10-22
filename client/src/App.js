@@ -6,7 +6,7 @@ import LandingPage from "./screens/landing-page/LandingPage";
 import RegisterAccount from "./screens/register-account/RegisterAccount";
 import LoginPage from "./screens/login-page/LoginPage";
 import HomePage from "./screens/home-page/HomePage";
-import Layout from "./components/shared/layout/Layout";
+// import Layout from "./components/shared/layout/Layout";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
