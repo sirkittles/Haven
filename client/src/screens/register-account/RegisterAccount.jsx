@@ -23,6 +23,10 @@ const RegisterAccount = (props) => {
         e.preventDefault();
         handleRegister(formData);
       }}>
+        {
+          error &&
+          <p>{error}</p>
+        }
         {/* <label>
           First Name:
            <input
@@ -44,7 +48,7 @@ const RegisterAccount = (props) => {
          <input
             type="text"
             value={username}
-            name="Username"
+            name="username"
             onChange={handleChange}
           />
         </label>
@@ -52,7 +56,7 @@ const RegisterAccount = (props) => {
          <input
             type="text"
             value={email}
-            name="Email"
+            name="email"
             onChange={handleChange}
           />
         </label>
@@ -60,7 +64,7 @@ const RegisterAccount = (props) => {
          <input
             type="password"
             value={password}
-            name="Password"
+            name="password"
             onChange={handleChange}
           />
         </label>

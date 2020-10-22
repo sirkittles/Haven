@@ -5,6 +5,7 @@ import { registerUser, loginUser } from './services/auth';
 import LandingPage from './screens/landing-page/LandingPage';
 import RegisterAccount from './screens/register-account/RegisterAccount';
 import LoginPage from './screens/login-page/LoginPage';
+import HomePage from './screens/home-page/HomePage';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -19,7 +20,7 @@ function App() {
   const handleRegister = async (registerData) => {
     const userData = await registerUser(registerData);
     setCurrentUser(userData);
-    history.pushState('/homepage')
+    history.push('/homepage')
   }
 
   return (
@@ -33,6 +34,9 @@ function App() {
         </Route>
         <Route path='/login'>
           <LoginPage handleLogin={handleLogin} />
+        </Route>
+        <Route path='/homepage'>
+          <HomePage />
         </Route>
       </Switch>
     </div>
