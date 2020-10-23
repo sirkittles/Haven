@@ -7,11 +7,15 @@ const Header = (props) => {
 
   return (
     <div>
-      <img
-        src={`${process.env.PUBLIC_URL}/assets/logo2.png`}
-        alt="header-logo"
-        className="header-logo"
-      />
+      <div className="header-logo-container">
+        <Link to="/homepage">
+          <img
+          src={`${process.env.PUBLIC_URL}/assets/logo2.png`}
+          alt="header-logo"
+          className="header-logo"
+          />
+        </Link>
+      </div>
       {
         currentUser ?
           <>
