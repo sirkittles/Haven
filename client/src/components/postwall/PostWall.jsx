@@ -18,8 +18,6 @@ const PostWall = (props) => {
   // };
 
   const postsJSX = posts && posts.map(post => (
-    // console.log(post.id)
-    // console.log(post.img_url)
     <Post
       key={post.id}
       imgURL={post.img_url}

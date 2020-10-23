@@ -24,7 +24,8 @@ const Hamburger = (props) => {
             />
           </div>
           <div className={openMenu ? "hamburger-menu-links-visible" : "hamburger-menu-links-hidden"}>
-            <Link className="menu-link" to="/create-post">Make a Post</Link>
+              <Link className="menu-link" to="/create-post">Make a Post</Link>
+              <Link className="menu-link" to="/users/:id/posts">My Posts</Link>
           </div>
         </div>
         :

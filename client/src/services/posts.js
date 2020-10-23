@@ -24,3 +24,8 @@ export const deletePost = async (id) => {
   const resp = await api.delete(`/posts/${id}`);
   return resp.data;
 }
+
+export const getAllPostsOneUser = async (id) => {
+  const resp = await api.get(`/users/${id}/posts`);
+  return resp.data;
+}

@@ -7,12 +7,14 @@ import RegisterAccount from "./screens/register-account/RegisterAccount";
 import LoginPage from "./screens/login-page/LoginPage";
 import HomePage from "./screens/home-page/HomePage";
 import MakePost from "./screens/make-post/MakePost";
-import { getAllPosts, postPost } from "./services/posts";
+import MyPosts from "./screens/my-posts/MyPosts";
+import { getAllPosts, postPost, getAllPostsOneUser } from "./services/posts";
 // import Layout from "./components/shared/layout/Layout";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
-  const [posts, setPosts] = useState();
+  const [posts, setPosts] = useState([]);
+  const [allUserPosts, setAllUserPosts] = useState([]);
   const history = useHistory();
 
   useEffect(() => {
@@ -30,6 +32,12 @@ function App() {
     history.push('/homepage');
   }
 
+  const fetchAllUserPosts = async (id) => {
+    const resp = await getAllPostsOneUser(id);
+    setAllUserPosts(resp.data);
+  }
+
+  // login/auth
   const handleLogin = async (loginData) => {
     const userData = await loginUser(loginData);
     setCurrentUser(userData);
@@ -73,6 +81,9 @@ function App() {
         </Route>
         <Route path="/create-post">
           <MakePost currentUser={currentUser} handlePostCreate={handlePostCreate} />
+        </Route>
+        <Route path="/users/:id/posts">
+          <MyPosts currentUser={currentUser} fetchAllUserPosts={fetchAllUserPosts} allUserPosts={allUserPosts} />
         </Route>
       </Switch>
     </div>
