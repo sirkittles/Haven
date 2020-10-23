@@ -5,6 +5,7 @@ import "./Hamburger.css";
 const Hamburger = (props) => {
   const [openMenu, setOpenMenu] = useState(false);
   const { currentUser } = props;
+  // const { id } = currentUser;
 
   const changeMenuOpen = (e) => {
     e.preventDefault();
@@ -25,7 +26,7 @@ const Hamburger = (props) => {
           </div>
           <div className={openMenu ? "hamburger-menu-links-visible" : "hamburger-menu-links-hidden"}>
               <Link className="menu-link" to="/create-post">Make a Post</Link>
-              <Link className="menu-link" to="/users/:id/posts">My Posts</Link>
+              <Link className="menu-link" to={`/users/${props.currentUser.id}/posts`}>My Posts</Link>
           </div>
         </div>
         :

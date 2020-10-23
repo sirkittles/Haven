@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    render json: @user
+    render json: @user, include: :posts, status: :ok
   end
 
   # POST /users
@@ -31,6 +31,7 @@ class UsersController < ApplicationController
   # all posts by user
   def posts
     @user = User.find(params[:id])
+    # , include: :posts
     @posts = @user.posts
   end
 

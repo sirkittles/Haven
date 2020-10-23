@@ -1,14 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { getAllPostsOneUser } from "../../services/posts";
 import Layout from "../../components/shared/layout/Layout";
 
 const MyPosts = (props) => {
-  const { currentUser, fetchAllUserPosts, allUserPosts } = props;
+  const [allUserPosts, setAllUserPosts] = useState([]);
+  const { currentUser } = props;
   const { id } = useParams();
 
   useEffect(() => {
     fetchAllUserPosts(id);
-  }, []);
+  }, [id]);
+
+  const fetchAllUserPosts = async (id) => {
+    const resp = await getAllPostsOneUser(id);
+    setAllUserPosts(resp);
+  }
 
   console.log(allUserPosts);
 

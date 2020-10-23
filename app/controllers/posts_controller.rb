@@ -9,6 +9,14 @@ class PostsController < ApplicationController
     render json: @posts, :include => [:comments, :hashtags], status: :ok
   end
 
+  # gets all posts of one user
+  def posts_of_user
+    @user = User.find(params[:id])
+    @posts = Post.where(user_id: @user.id)
+
+    render json: @posts, include: :user, status: :ok
+  end
+
   # GET /posts/1
   def show
     render json: @post, :include => [:comments, :hashtags], status: :ok

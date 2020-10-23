@@ -14,7 +14,7 @@ import { getAllPosts, postPost, getAllPostsOneUser } from "./services/posts";
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [posts, setPosts] = useState([]);
-  const [allUserPosts, setAllUserPosts] = useState([]);
+  // const [allUserPosts, setAllUserPosts] = useState([]);
   const history = useHistory();
 
   useEffect(() => {
@@ -32,10 +32,10 @@ function App() {
     history.push('/homepage');
   }
 
-  const fetchAllUserPosts = async (id) => {
-    const resp = await getAllPostsOneUser(id);
-    setAllUserPosts(resp.data);
-  }
+  // const fetchAllUserPosts = async (id) => {
+  //   const resp = await getAllPostsOneUser(id);
+  //   setAllUserPosts(resp.data);
+  // }
 
   // login/auth
   const handleLogin = async (loginData) => {
@@ -83,7 +83,7 @@ function App() {
           <MakePost currentUser={currentUser} handlePostCreate={handlePostCreate} />
         </Route>
         <Route path="/users/:id/posts">
-          <MyPosts currentUser={currentUser} fetchAllUserPosts={fetchAllUserPosts} allUserPosts={allUserPosts} />
+          <MyPosts currentUser={currentUser} />
         </Route>
       </Switch>
     </div>
