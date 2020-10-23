@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Route, Switch, useHistory } from "react-router-dom";
 import "./App.css";
-import { registerUser, loginUser, removeToken } from "./services/auth";
+import { registerUser, loginUser, removeToken, verifyUser } from "./services/auth";
 import LandingPage from "./screens/landing-page/LandingPage";
 import RegisterAccount from "./screens/register-account/RegisterAccount";
 import LoginPage from "./screens/login-page/LoginPage";
@@ -47,6 +47,14 @@ function App() {
     localStorage.removeItem("authToken");
     removeToken();
   };
+
+  useEffect(() => {
+    const handleVerify = async () => {
+      const userData = await verifyUser();
+      setCurrentUser(userData);
+    }
+    handleVerify();
+  }, []);
 
   return (
     <div className="App">
