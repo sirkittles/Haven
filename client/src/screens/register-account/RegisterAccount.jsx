@@ -7,7 +7,7 @@ const RegisterAccount = (props) => {
     password: ""
   });
   const { username, email, password } = formData;
-  const { error, handleRegister } = props;
+  const { handleRegister } = props;
 
   const handleChange = (e) => {
     const { name, value } = e.target;

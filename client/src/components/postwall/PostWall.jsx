@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { getAllPosts } from "../../services/posts";
+// import { getAllPosts } from "../../services/posts";
 import Post from "../post/Post";
 
 const PostWall = (props) => {

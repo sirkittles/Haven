@@ -45,7 +45,7 @@ const LoginPage = (props) => {
          />
         </label>
         <button>Login</button>
-        <p>Don't have an account yet?</p><Link to='/register'>Join Here</Link>
+        <p>Don't have an account yet?</p><Link to='/register-account'>Join Here</Link>
       </form>
     </div>
   )

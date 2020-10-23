@@ -5,6 +5,7 @@ const Post = (props) => {
   return (
     <div>
       <img src={imgURL} />
+      <div>{content}</div>
     </div>
   )
 }

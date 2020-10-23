@@ -24,12 +24,12 @@ const Hamburger = (props) => {
             />
           </div>
           <div className={openMenu ? "hamburger-menu-links-visible" : "hamburger-menu-links-hidden"}>
-            <a className="menu-link" href="/create-post">Make a Post</a>
+            <Link className="menu-link" to="/create-post">Make a Post</Link>
           </div>
         </div>
         :
         <>
-          <Link to='/login'>Login</Link>
+          ''
         </>
       }
     </div>

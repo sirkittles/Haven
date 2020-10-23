@@ -1,20 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Layout from "../../components/shared/layout/Layout";
 import PostWall from "../../components/postwall/PostWall";
-import { getAllPosts } from "../../services/posts";
 
 const HomePage = (props) => {
-  const [posts, setPosts] = useState();
-  const { currentUser, handleLogout } = props;
-
-  useEffect(() => {
-    fetchPosts();
-  }, []);
-
-  const fetchPosts = async () => {
-    const resp = await getAllPosts();
-    setPosts(resp);
-  };
+  const { currentUser, handleLogout, posts } = props;
 
   return (
     <Layout

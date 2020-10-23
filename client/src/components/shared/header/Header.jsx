@@ -15,6 +15,7 @@ const Header = (props) => {
       {
         currentUser ?
           <>
+            {currentUser.username}
             <Hamburger
               currentUser={currentUser}
               handleLogout={handleLogout}
