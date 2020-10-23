@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Hamburger from "../../hamburger/Hamburger";
 
 const Header = (props) => {
   const { currentUser, handleLogout } = props;
@@ -14,8 +15,12 @@ const Header = (props) => {
       {
         currentUser ?
           <>
-            <p>{currentUser.username}</p>
-            <button onClick={handleLogout}>Logout</button>
+            <Hamburger
+              currentUser={currentUser}
+              handleLogout={handleLogout}
+            />
+            {/* <p>{currentUser.username}</p>
+            <button onClick={handleLogout}>Logout</button> */}
           </>
           :
           <Link to='/login'>Login</Link>

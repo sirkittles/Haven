@@ -6,6 +6,7 @@ import LandingPage from "./screens/landing-page/LandingPage";
 import RegisterAccount from "./screens/register-account/RegisterAccount";
 import LoginPage from "./screens/login-page/LoginPage";
 import HomePage from "./screens/home-page/HomePage";
+import MakePost from "./screens/make-post/MakePost";
 // import Layout from "./components/shared/layout/Layout";
 
 function App() {
@@ -32,23 +33,23 @@ function App() {
 
   return (
     <div className="App">
-        <Switch>
-          <Route exact path="/">
-            <LandingPage />
-          </Route>
-          <Route path="/register-account">
-            <RegisterAccount handleRegister={handleRegister} />
-          </Route>
-          <Route path="/login">
-            <LoginPage handleLogin={handleLogin} />
-          </Route>
-          <Route path="/homepage">
-            <HomePage
-              currentUser={currentUser}
-              handleLogout={handleLogout}
-            />
-          </Route>
-        </Switch>
+      <Switch>
+        <Route exact path="/">
+          <LandingPage />
+        </Route>
+        <Route path="/register-account">
+          <RegisterAccount handleRegister={handleRegister} />
+        </Route>
+        <Route path="/login">
+          <LoginPage handleLogin={handleLogin} />
+        </Route>
+        <Route path="/homepage">
+          <HomePage currentUser={currentUser} handleLogout={handleLogout} />
+        </Route>
+        <Route>
+          <MakePost />
+        </Route>
+      </Switch>
     </div>
   );
 }

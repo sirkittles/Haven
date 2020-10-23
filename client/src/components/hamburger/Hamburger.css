@@ -1,0 +1,9 @@
+.hamburger-menu-links-visible {
+  display: block;
+  position: relative;
+  background-color: white;
+}
+
+.hamburger-menu-links-hidden {
+  display: none;
+}
