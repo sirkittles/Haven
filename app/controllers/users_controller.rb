@@ -28,6 +28,12 @@ class UsersController < ApplicationController
     end
   end
 
+  # all posts by user
+  def posts
+    @user = User.find(params[:id])
+    @posts = @user.posts
+  end
+
   # # PATCH/PUT /users/1
   # def update
   #   if @user.update(user_params)

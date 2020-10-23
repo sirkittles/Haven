@@ -14,7 +14,7 @@ User.destroy_all
 @user2 = User.create!(username: 'tester', email: 'tester@email.com', password: 'tester123')
 puts "#{User.count} users created"
 
-@post1 = Post.create!(img_url: 'http://www.fakeimage.com/fake', content: 'this is fake content for my fake post.', user_id: @user1.id)
+@post1 = Post.create!(img_url: 'https://www.fakeimage.com/fake.jpg', content: 'this is fake content for my fake post.', user_id: @user1.id)
 @post2 = Post.create!(img_url: 'https://i.redd.it/mlujr8os37u51.jpg', content: 'My minimalistic living space - Chicago, IL', user_id: @user2.id)
 puts "#{Post.count} posts created"
 

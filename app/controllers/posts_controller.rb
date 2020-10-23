@@ -40,6 +40,12 @@ class PostsController < ApplicationController
     @post.destroy
   end
 
+  # # all posts by user
+  # def posts
+  #   @user = User.find(params[:id])
+  #   @posts = @user.posts
+  # end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
