@@ -8,12 +8,13 @@ import LoginPage from "./screens/login-page/LoginPage";
 import HomePage from "./screens/home-page/HomePage";
 import MakePost from "./screens/make-post/MakePost";
 import MyPosts from "./screens/my-posts/MyPosts";
-import { getAllPosts, postPost, getAllPostsOneUser } from "./services/posts";
+import { getAllPosts, postPost, getAllPostsOneUser, deletePost } from "./services/posts";
 // import Layout from "./components/shared/layout/Layout";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [posts, setPosts] = useState([]);
+  const [isDeleted, setIsDeleted] = useState(false);
   // const [allUserPosts, setAllUserPosts] = useState([]);
   const history = useHistory();
 
@@ -31,11 +32,6 @@ function App() {
     setPosts(prevState => ([...prevState, newPost]));
     history.push('/homepage');
   }
-
-  // const fetchAllUserPosts = async (id) => {
-  //   const resp = await getAllPostsOneUser(id);
-  //   setAllUserPosts(resp.data);
-  // }
 
   // login/auth
   const handleLogin = async (loginData) => {
@@ -77,13 +73,13 @@ function App() {
           <LoginPage handleLogin={handleLogin} />
         </Route>
         <Route path="/homepage">
-          <HomePage currentUser={currentUser} handleLogout={handleLogout} posts={posts} />
+          <HomePage currentUser={currentUser} handleLogout={handleLogout} posts={posts} setIsDeleted={setIsDeleted} isDeleted={isDeleted} fetchPosts={fetchPosts} />
         </Route>
         <Route path="/create-post">
           <MakePost currentUser={currentUser} handlePostCreate={handlePostCreate} />
         </Route>
         <Route path="/users/:id/posts">
-          <MyPosts currentUser={currentUser} />
+          <MyPosts currentUser={currentUser} deletePost={deletePost} setIsDeleted={setIsDeleted} isDeleted={isDeleted} />
         </Route>
       </Switch>
     </div>

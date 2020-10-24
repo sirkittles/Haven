@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "../../components/shared/layout/Layout";
 import PostWall from "../../components/postwall/PostWall";
 
 const HomePage = (props) => {
-  const { currentUser, handleLogout, posts } = props;
+  const { currentUser, handleLogout, posts, isDeleted, setIsDeleted, fetchPosts } = props;
+
+  useEffect(() => {
+    fetchPosts()
+  }, [isDeleted]);
 
   return (
     <Layout

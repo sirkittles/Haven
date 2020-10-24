@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 // import { getAllPosts } from "../../services/posts";
 import Post from "../post/Post";
@@ -20,6 +20,7 @@ const PostWall = (props) => {
   const postsJSX = posts && posts.map(post => (
     <Post
       key={post.id}
+      postId={post.id}
       imgURL={post.img_url}
       content={post.content}
       userId={post.user_id}
