@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getAllPostsOneUser } from "../../services/posts";
 import Layout from "../../components/shared/layout/Layout";
 import Post from "../../components/post/Post";
@@ -9,7 +9,6 @@ const MyPosts = (props) => {
   // const [isDeleted, setIsDeleted] = useState(false);
   const { currentUser, deletePost, isDeleted, setIsDeleted } = props;
   const { id } = useParams();
-  const history = useHistory();
 
   useEffect(() => {
     fetchAllUserPosts(id);
@@ -22,7 +21,7 @@ const MyPosts = (props) => {
 
   useEffect(() => {
     fetchAllUserPosts(id);
-  }, [isDeleted])
+  }, [id, isDeleted])
 
   const deleteUserPost = async (postId) => {
     await deletePost(postId);

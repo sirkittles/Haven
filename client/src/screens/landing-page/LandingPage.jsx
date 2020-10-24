@@ -1,11 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Header from "../../components/shared/header/Header";
+import "./LandingPage.css";
 
 const LandingPage = () => {
   return (
-    <div>
-      <div>
-        <h1>Welcome!</h1>
+    <div className="landing-page-container">
+      <div className="landing-header">
+      <Header />
+    </div>
+      <div className="logo-subtext-container">
         <img
           src={`${process.env.PUBLIC_URL}/assets/logo.png`}
           alt="main-logo"
@@ -13,11 +17,12 @@ const LandingPage = () => {
         />
         <h4>Show off your room</h4>
         <Link to="/register-account">
-          <button>Join Us</button>
+          <button className="join-button">Join Us</button>
         </Link>
-      </div>
-      <div>
-        <p>Already have an account?</p><Link to='/login'>Sign in</Link>
+        <div className="sign-in-link-container">
+          <span>Already have an account? </span>
+          <Link className="login-link" to="/login">Sign in</Link>
+        </div>
       </div>
     </div>
   );

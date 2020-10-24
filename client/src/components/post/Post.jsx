@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 // import { Match } from "react-location";
-import { useLocation, useHistory } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Post = (props) => {
   const { postId, imgURL, content, userId, deleteUserPost, isDeleted } = props;
   const location = useLocation();
-  const history = useHistory();
+  // const history = useHistory();
   console.log(location.pathname);
   console.log(userId)
   console.log(isDeleted)

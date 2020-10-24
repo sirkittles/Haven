@@ -8,7 +8,8 @@ import LoginPage from "./screens/login-page/LoginPage";
 import HomePage from "./screens/home-page/HomePage";
 import MakePost from "./screens/make-post/MakePost";
 import MyPosts from "./screens/my-posts/MyPosts";
-import { getAllPosts, postPost, getAllPostsOneUser, deletePost } from "./services/posts";
+import PostDetail from "./screens/post-detail/PostDetail";
+import { getAllPosts, postPost, deletePost } from "./services/posts";
 // import Layout from "./components/shared/layout/Layout";
 
 function App() {
@@ -80,6 +81,9 @@ function App() {
         </Route>
         <Route path="/users/:id/posts">
           <MyPosts currentUser={currentUser} deletePost={deletePost} setIsDeleted={setIsDeleted} isDeleted={isDeleted} />
+        </Route>
+        <Route path="/posts/:id">
+          <PostDetail currentUser={currentUser} />
         </Route>
       </Switch>
     </div>

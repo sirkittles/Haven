@@ -3,7 +3,7 @@ import Layout from "../../components/shared/layout/Layout";
 import PostWall from "../../components/postwall/PostWall";
 
 const HomePage = (props) => {
-  const { currentUser, handleLogout, posts, isDeleted, setIsDeleted, fetchPosts } = props;
+  const { currentUser, handleLogout, posts, isDeleted, fetchPosts } = props;
 
   useEffect(() => {
     fetchPosts()
