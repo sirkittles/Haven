@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Header from "../../components/shared/header/Header";
 
 const RegisterAccount = (props) => {
   const [formData, setFormData] = useState({
@@ -18,7 +19,8 @@ const RegisterAccount = (props) => {
   };
 
   return (
-    <div>
+    <div className="register-page">
+      <Header />
       <form onSubmit={(e) => {
         e.preventDefault();
         handleRegister(formData);

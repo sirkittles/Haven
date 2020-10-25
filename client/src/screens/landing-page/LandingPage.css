@@ -1,8 +1,7 @@
 .landing-page-container {
   display: flex;
   flex-direction: column;
-  width: 70vw;
-  margin: 100px auto;
+  margin-top: 100px;
 }
 
 .join-button {

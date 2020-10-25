@@ -4,6 +4,10 @@
   background-color: white;
 }
 
+.menu-link {
+  display: block;
+}
+
 .hamburger-menu-links-hidden {
   display: none;
 }

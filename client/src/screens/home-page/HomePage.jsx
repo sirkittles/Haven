@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import Layout from "../../components/shared/layout/Layout";
 import PostWall from "../../components/postwall/PostWall";
 
@@ -7,7 +8,7 @@ const HomePage = (props) => {
 
   useEffect(() => {
     fetchPosts()
-  }, [isDeleted]);
+  }, [fetchPosts, isDeleted]);
 
   return (
     <Layout
@@ -16,10 +17,16 @@ const HomePage = (props) => {
     >
       <h2>This is the homepage</h2>
       <div className="main-wall">
-        <PostWall
+        {
+          !currentUser ?
+            <span>Please <Link to="/login">login</Link> to view Posts</span>
+            :
+            <PostWall
           currentUser={currentUser}
           posts={posts}
         />
+        }
+
       </div>
     </Layout>
   )

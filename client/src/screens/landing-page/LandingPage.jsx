@@ -6,9 +6,9 @@ import "./LandingPage.css";
 const LandingPage = () => {
   return (
     <div className="landing-page-container">
-      <div className="landing-header">
-      <Header />
-    </div>
+      {/* <div className="landing-header">
+        <Header />
+      </div> */}
       <div className="landing-content-container">
         <img
           src={`${process.env.PUBLIC_URL}/assets/logo.png`}
@@ -21,7 +21,9 @@ const LandingPage = () => {
         </Link>
         <div className="sign-in-link-container">
           <span>Already have an account? </span>
-          <Link className="login-link" to="/login">Sign in</Link>
+          <Link className="login-link" to="/login">
+            Sign in
+          </Link>
         </div>
       </div>
     </div>
