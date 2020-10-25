@@ -1,11 +1,21 @@
 .hamburger-menu-links-visible {
-  display: block;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
   background-color: white;
 }
 
+.hamburger-icon {
+  width: 50%;
+}
+
 .menu-link {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hamburger-menu-links-hidden {
