@@ -24,14 +24,15 @@ const PostWall = (props) => {
       imgURL={post.img_url}
       content={post.content}
       userId={post.user_id}
+      comments={post.comments}
     />
   ))
 
   return (
-    <div>
+    <div className="postwall-container">
       {
         currentUser ?
-          <div>
+          <div className="posts-container">
             { postsJSX }
           {/* <h3>hi</h3> */}
           </div>

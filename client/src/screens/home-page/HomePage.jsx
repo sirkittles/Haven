@@ -7,8 +7,8 @@ const HomePage = (props) => {
   const { currentUser, handleLogout, posts, isDeleted, fetchPosts } = props;
 
   useEffect(() => {
-    fetchPosts()
-  }, [fetchPosts, isDeleted]);
+    fetchPosts();
+  }, [isDeleted]);
 
   return (
     <Layout

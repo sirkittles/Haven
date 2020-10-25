@@ -18,7 +18,7 @@ const MakePost = (props) => {
       [name]: value
     });
   };
-
+  // console.log(currentUser.username)
   return (
     <Layout currentUser={currentUser} >
       <div className="form-container">
