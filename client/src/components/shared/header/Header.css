@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.header-logo {
+  width: 50%;
+}
+
+.header-menu {
+  margin-right: 50px;
+}
+
+.header-login-link {
+  text-decoration: none;
+}
+
+.header-login-link:hover {
+  text-decoration: underline;
+}

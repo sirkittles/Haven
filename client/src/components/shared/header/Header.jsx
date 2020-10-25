@@ -1,37 +1,36 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Hamburger from "../../hamburger/Hamburger";
+import "./Header.css";
 
 const Header = (props) => {
   const { currentUser, handleLogout } = props;
 
   return (
-    <div>
+    <div className="header">
       <div className="header-logo-container">
         <Link to="/homepage">
           <img
-          src={`${process.env.PUBLIC_URL}/assets/logo2.png`}
-          alt="header-logo"
-          className="header-logo"
+            src={`${process.env.PUBLIC_URL}/assets/logo2.png`}
+            alt="header-logo"
+            className="header-logo"
           />
         </Link>
       </div>
-      {
-        currentUser ?
+      <div className="header-menu">
+        {currentUser ? (
           <>
             {currentUser.username}
-            <Hamburger
-              currentUser={currentUser}
-              handleLogout={handleLogout}
-            />
+            <Hamburger currentUser={currentUser} handleLogout={handleLogout} />
             {/* <p>{currentUser.username}</p>
             <button onClick={handleLogout}>Logout</button> */}
           </>
-          :
-          <Link to='/login'>Login</Link>
-      }
+        ) : (
+          <Link to="/login" className="header-login-link">Login</Link>
+        )}
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default Header;

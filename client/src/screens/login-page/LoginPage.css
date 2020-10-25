@@ -1,0 +1,19 @@
+.login-content-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* .login-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+} */
+
+.login-form {
+  display: block;
+}
+
+.login-button {
+  width: 120px;
+  margin: 0px auto;
+}

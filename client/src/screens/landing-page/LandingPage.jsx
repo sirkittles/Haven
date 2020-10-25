@@ -9,7 +9,7 @@ const LandingPage = () => {
       <div className="landing-header">
       <Header />
     </div>
-      <div className="logo-subtext-container">
+      <div className="landing-content-container">
         <img
           src={`${process.env.PUBLIC_URL}/assets/logo.png`}
           alt="main-logo"
