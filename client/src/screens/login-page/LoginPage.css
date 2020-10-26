@@ -14,7 +14,26 @@
   display: block;
 }
 
+.password-container {
+  margin-top: 10px;
+}
+
+.login-form input {
+  margin-left: 10px;
+}
+
 .login-button {
-  width: 120px;
-  margin: 0px auto;
+  width: 100px;
+  margin: 15px auto 0px;
+  border: 1px solid darkgrey;
+  border-radius: 4px;
+  height: 30px;
+}
+
+.login-content-container span {
+  margin-top: 10px;
+}
+
+.join-link {
+  color: blue;
 }

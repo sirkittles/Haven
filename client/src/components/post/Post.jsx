@@ -38,11 +38,14 @@ const Post = (props) => {
 
   return (
     <div className="post-container">
-      <div>{username}</div>
+      <div className="post-top"></div>
+      {/* <div className="post-username">{username}</div> */}
       <Link to={`/posts/${postId}`}>
-        <img className="post-image" src={imgURL} alt={`${userId}'s post`} />
+        <div className="post-img-container">
+          <img className="post-image" src={imgURL} alt={`${userId}'s post`} />
+        </div>
       </Link>
-      <div>{content}</div>
+      <div className="post-content"><span className="post-username">{username}</span>{content}</div>
       {location.pathname === "/homepage" && comments !== undefined && comments.length > 0 ? (
         <button onClick={() => setToggleViewComments(!toggleViewComments)}>
           View Comments

@@ -16,9 +16,12 @@ const HomePage = (props) => {
       <div className="floater"></div>
       <div className="main-wall">
         {!currentUser ? (
-          <span>
-            Please <Link to="/login">login</Link> to view Posts
-          </span>
+          <>
+            <div className="floater"></div>
+            <span>
+              Please <Link className="home-login-link" to="/login">login</Link> to view Posts
+            </span>
+          </>
         ) : (
           <PostWall currentUser={currentUser} posts={posts} />
         )}

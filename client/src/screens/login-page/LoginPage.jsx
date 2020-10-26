@@ -60,7 +60,7 @@ const LoginPage = (props) => {
           <button className="login-button">Login</button>
         </form>
         <span>Don't have an account yet? </span>
-        <Link to="/register-account">Join Here</Link>
+        <Link className="join-link" to="/register-account">Join Here</Link>
       </div>
     </div>
   );

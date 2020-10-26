@@ -1,8 +1,48 @@
 .post-container {
   width: 70vw;
   margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid darkgrey;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.post-container:hover {
+  opacity: 0.7;
+  transition: 550ms all;
+}
+
+.post-container a {
+  display: flex;
+  align-items: center;
+}
+
+.post-username {
+  text-align: left;
+  margin-left: 10px;
+  margin-right: 30px;
+  align-items: center;
+  font-weight: bold;
+}
+
+.post-content {
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
+.post-top {
+  height: 20px;
 }
 
 .post-image {
-  width: 50vw;
+  width: 100%;
+}
+
+.post-image-container {
+  max-height: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
 }

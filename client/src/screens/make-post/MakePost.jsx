@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import { postPost } from "../../services/posts";
 import Layout from "../../components/shared/layout/Layout";
+import "./MakePost.css";
 
 const MakePost = (props) => {
   const { currentUser, handlePostCreate } = props;
@@ -8,7 +9,6 @@ const MakePost = (props) => {
   const [formData, setFormData] = useState({
     img_url: "",
     content: "",
-    username: currentUser.username
   });
 
   // const [input, setInput] = useState();
@@ -26,7 +26,7 @@ const MakePost = (props) => {
     <Layout currentUser={currentUser} >
       <div className="floater"></div>
       <div className="form-container">
-        <form onSubmit={(e) => {
+        <form className="create-form" onSubmit={(e) => {
           e.preventDefault()
           handlePostCreate(formData);
         }}>
@@ -49,7 +49,7 @@ const MakePost = (props) => {
               onChange={handleChange}
             />
           </label>
-          <button>Submit</button>
+          <button className="create-submit">Submit</button>
         </form>
       </div>
     </Layout>
