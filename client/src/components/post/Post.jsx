@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
-// import { Match } from "react-location";
 import { useLocation, Link, useHistory } from "react-router-dom";
 import "./Post.css";
-import { getOnePost } from "../../services/posts";
-import PostDetail from "../../screens/post-detail/PostDetail";
 
 const Post = (props) => {
   const {
@@ -12,7 +9,6 @@ const Post = (props) => {
     content,
     userId,
     deleteUserPost,
-    isDeleted,
     username,
     comments,
     handleUpdatePost
@@ -25,13 +21,9 @@ const Post = (props) => {
   });
   const [toggleEditForm, setToggleEditForm] = useState(false);
   const [toggleViewComments, setToggleViewComments] = useState(false);
-  const [onePost, setOnePost] = useState([]);
   const history = useHistory();
-  // useEffect(() => {
-  //   deleteUserPost();
-  // }, [isDeleted])
-  // comments ?
-  const comment = comments.map(comment => (comment.content))
+
+  const comment = comments?.map(comment => (comment.content))
   console.log(toggleEditForm);
   console.log(comments);
 
@@ -44,21 +36,11 @@ const Post = (props) => {
     })
   }
 
-  useEffect(() => {
-    const fetch = async () => await fetchOnePost(postId);
-    fetch();
-  }, [postId]);
-
-  const fetchOnePost = async (postId) => {
-    const resp = await getOnePost(postId);
-    setOnePost(resp);
-  };
-
   return (
     <div className="post-container">
       <div>{username}</div>
       <Link to={`/posts/${postId}`}>
-        <img className="post-image" src={imgURL} alt={`${userId}'s post`} onClick={() => <PostDetail onePost={onePost} setOnePost={setOnePost} />} />
+        <img className="post-image" src={imgURL} alt={`${userId}'s post`} />
       </Link>
       <div>{content}</div>
       {location.pathname === "/homepage" && comments !== undefined && comments.length > 0 ? (
@@ -83,7 +65,6 @@ const Post = (props) => {
               className="delete-button"
               onClick={() => {
                 deleteUserPost(postId, editPost);
-                // isDeleted ? history.push(`/user/${userId}/posts`) : ""
               }}
             >
               Delete

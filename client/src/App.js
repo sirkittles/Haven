@@ -10,7 +10,7 @@ import MakePost from "./screens/make-post/MakePost";
 import MyPosts from "./screens/my-posts/MyPosts";
 import PostDetail from "./screens/post-detail/PostDetail";
 import PostEdit from "./screens/post-edit/PostEdit";
-import { getAllPosts, getOnePost, postPost, deletePost, putPost } from "./services/posts";
+import { getAllPosts, postPost, deletePost, putPost } from "./services/posts";
 // import Layout from "./components/shared/layout/Layout";
 
 function App() {
@@ -29,20 +29,6 @@ function App() {
     const resp = await getAllPosts();
     setPosts(resp);
   };
-
-  // useEffect(() => {
-  //   const fetch = async () => await fetchOnePost(id);
-  //   fetch();
-  // }, [id]);
-
-  // const fetchOnePost = async (id) => {
-  //   const resp = await getOnePost(id);
-  //   setOnePost(resp);
-  // };
-  // const fetchOnePost = async (id) => {
-  //   const resp = await getOnePost();
-  //   setOnePost(resp);
-  // }
 
   const handlePostCreate = async (postData) => {
     const newPost = await postPost(postData);
