@@ -9,7 +9,8 @@ import HomePage from "./screens/home-page/HomePage";
 import MakePost from "./screens/make-post/MakePost";
 import MyPosts from "./screens/my-posts/MyPosts";
 import PostDetail from "./screens/post-detail/PostDetail";
-import { getAllPosts, postPost, deletePost } from "./services/posts";
+import PostEdit from "./screens/post-edit/PostEdit";
+import { getAllPosts, postPost, deletePost, putPost } from "./services/posts";
 // import Layout from "./components/shared/layout/Layout";
 
 function App() {
@@ -31,6 +32,14 @@ function App() {
   const handlePostCreate = async (postData) => {
     const newPost = await postPost(postData);
     setPosts(prevState => ([...prevState, newPost]));
+    history.push('/homepage');
+  }
+
+  const handleUpdatePost = async (id, postData) => {
+    const updatedPost = await putPost(id, postData);
+    setPosts(prevState => prevState.map(post => {
+      return post.id === Number(id) ? updatedPost : post;
+    }))
     history.push('/homepage');
   }
 
@@ -80,10 +89,13 @@ function App() {
           <MakePost currentUser={currentUser} handlePostCreate={handlePostCreate} />
         </Route>
         <Route path="/users/:id/posts">
-          <MyPosts currentUser={currentUser} deletePost={deletePost} setIsDeleted={setIsDeleted} isDeleted={isDeleted} />
+          <MyPosts currentUser={currentUser} deletePost={deletePost} setIsDeleted={setIsDeleted} isDeleted={isDeleted} handleUpdatePost={handleUpdatePost} putPost={putPost} />
         </Route>
         <Route path="/posts/:id">
           <PostDetail currentUser={currentUser} />
+        </Route>
+        <Route path="/post-edit">
+          <PostEdit currentUser={currentUser} />
         </Route>
       </Switch>
     </div>

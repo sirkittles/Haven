@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 // import { getAllPosts } from "../../services/posts";
 import Post from "../post/Post";
+import "./PostWall.css"
 
 const PostWall = (props) => {
   // const [posts, setPosts] = useState();
@@ -30,6 +31,7 @@ const PostWall = (props) => {
   ))
 
   return (
+    <>
     <div className="postwall-container">
       {
         currentUser ?
@@ -43,7 +45,8 @@ const PostWall = (props) => {
           <Link to='/login'>Login</Link><span>to view</span>
           </>
       }
-    </div>
+      </div>
+    </>
   )
 }
 

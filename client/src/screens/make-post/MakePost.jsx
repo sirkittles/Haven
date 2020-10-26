@@ -8,7 +8,10 @@ const MakePost = (props) => {
   const [formData, setFormData] = useState({
     img_url: "",
     content: "",
+    username: currentUser.username
   });
+
+  // const [input, setInput] = useState();
   const { img_url, content } = formData;
 
   const handleChange = (e) => {
@@ -18,7 +21,7 @@ const MakePost = (props) => {
       [name]: value
     });
   };
-  // console.log(currentUser.username)
+  console.log(formData)
   return (
     <Layout currentUser={currentUser} >
       <div className="form-container">

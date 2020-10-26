@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Layout from "../../components/shared/layout/Layout";
 import PostWall from "../../components/postwall/PostWall";
+import "./HomePage.css"
 
 const HomePage = (props) => {
   const { currentUser, handleLogout, posts, isDeleted, fetchPosts } = props;
@@ -15,7 +16,7 @@ const HomePage = (props) => {
       currentUser={currentUser}
       handleLogout={handleLogout}
     >
-      <h2>This is the homepage</h2>
+      <div className="floater"></div>
       <div className="main-wall">
         {
           !currentUser ?

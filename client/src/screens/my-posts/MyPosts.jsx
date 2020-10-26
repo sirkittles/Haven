@@ -7,21 +7,21 @@ import Post from "../../components/post/Post";
 const MyPosts = (props) => {
   const [allUserPosts, setAllUserPosts] = useState([]);
   // const [isDeleted, setIsDeleted] = useState(false);
-  const { currentUser, deletePost, isDeleted, setIsDeleted } = props;
+  const { currentUser, deletePost, isDeleted, setIsDeleted, handleUpdatePost, putPost } = props;
   const { id } = useParams();
 
   useEffect(() => {
     fetchAllUserPosts(id);
-  }, [id]);
+  }, [id, isDeleted]);
 
   const fetchAllUserPosts = async (id) => {
     const resp = await getAllPostsOneUser(id);
     setAllUserPosts(resp);
   }
 
-  useEffect(() => {
-    fetchAllUserPosts(id);
-  }, [id, isDeleted])
+  // useEffect(() => {
+  //   fetchAllUserPosts(id);
+  // }, [id, isDeleted])
 
   const deleteUserPost = async (postId) => {
     await deletePost(postId);
@@ -44,6 +44,8 @@ const MyPosts = (props) => {
       userId={mypost.user_id}
       deleteUserPost={deleteUserPost}
       isDeleted={isDeleted}
+      handleUpdatePost={handleUpdatePost}
+      putPost={putPost}
     />
   ))
 

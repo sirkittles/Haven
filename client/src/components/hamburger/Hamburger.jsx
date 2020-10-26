@@ -13,9 +13,8 @@ const Hamburger = (props) => {
   };
 
   return (
-    <div>
-      {
-        currentUser ?
+    <>
+      {currentUser ? (
         <div className="menu-container">
           <div className="menu-links">
             <img
@@ -25,18 +24,37 @@ const Hamburger = (props) => {
               onClick={(e) => changeMenuOpen(e)}
             />
           </div>
-          <div className={openMenu ? "hamburger-menu-links-visible menu-link" : "hamburger-menu-links-hidden"}>
-              <Link className="menu-link" to="/create-post">Make a Post</Link>
-              <Link className="menu-link" to={`/users/${props.currentUser.id}/posts`}>My Posts</Link>
-              <Link className="logout-link" to="/" onClick={() => handleLogout()}>logout</Link>
+          <div className="dropdown">
+            <div
+              className={
+                openMenu
+                  ? "hamburger-menu-links-visible menu-link"
+                  : "hamburger-menu-links-hidden"
+              }
+            >
+              <Link className="menu-link" to="/create-post">
+                Make a Post
+              </Link>
+              <Link
+                className="menu-link"
+                to={`/users/${props.currentUser.id}/posts`}
+              >
+                My Posts
+              </Link>
+              <Link
+                className="logout-link"
+                to="/"
+                onClick={() => handleLogout()}
+              >
+                logout
+              </Link>
+            </div>
           </div>
         </div>
-        :
-        <>
-          ''
-        </>
-      }
-    </div>
+      ) : (
+        <>''</>
+      )}
+    </>
   );
 };
 

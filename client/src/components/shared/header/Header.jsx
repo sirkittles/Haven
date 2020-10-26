@@ -20,7 +20,7 @@ const Header = (props) => {
       <div className="header-menu">
         {currentUser ? (
           <>
-            {currentUser.username}
+            {/* {currentUser.username} */}
             <Hamburger currentUser={currentUser} handleLogout={handleLogout} />
             {/* <p>{currentUser.username}</p>
             <button onClick={handleLogout}>Logout</button> */}
