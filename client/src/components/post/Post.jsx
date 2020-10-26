@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import { Match } from "react-location";
 import { useLocation, Link, useHistory } from "react-router-dom";
 import "./Post.css";
-import PostEdit from "../../screens/post-edit/PostEdit";
+import { getOnePost } from "../../services/posts";
+import PostDetail from "../../screens/post-detail/PostDetail";
 
 const Post = (props) => {
   const {
@@ -24,6 +25,7 @@ const Post = (props) => {
   });
   const [toggleEditForm, setToggleEditForm] = useState(false);
   const [toggleViewComments, setToggleViewComments] = useState(false);
+  const [onePost, setOnePost] = useState([]);
   const history = useHistory();
   // useEffect(() => {
   //   deleteUserPost();
@@ -42,26 +44,28 @@ const Post = (props) => {
     })
   }
 
+  useEffect(() => {
+    const fetch = async () => await fetchOnePost(postId);
+    fetch();
+  }, [postId]);
+
+  const fetchOnePost = async (postId) => {
+    const resp = await getOnePost(postId);
+    setOnePost(resp);
+  };
+
   return (
     <div className="post-container">
       <div>{username}</div>
       <Link to={`/posts/${postId}`}>
-        <img className="post-image" src={imgURL} alt={`${userId}'s post`} />
+        <img className="post-image" src={imgURL} alt={`${userId}'s post`} onClick={() => <PostDetail onePost={onePost} setOnePost={setOnePost} />} />
       </Link>
       <div>{content}</div>
       {location.pathname === "/homepage" && comments !== undefined && comments.length > 0 ? (
         <button onClick={() => setToggleViewComments(!toggleViewComments)}>
           View Comments
         </button>
-        
-        
       ) : (
-        // comments.map((comment) => (
-        //   <div className="comment-container" key={comment.id}>
-        //     <div>{comment.content}</div>
-        //     <div>{comment.username}</div>
-        //   </div>
-        // ))
         ""
       )}
       {toggleViewComments && (

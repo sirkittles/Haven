@@ -19,9 +19,9 @@ class PostsController < ApplicationController
 
   # GET /posts/1
   def show
-    render json: @post, :include => [:comments, :hashtags], status: :ok
+    render json: @post, :include => [:user, :comments, :hashtags], status: :ok
   end
-
+  # :include => [:user :comments, :hashtags],include: :user :comments :hashtags,
   # POST /posts
   def create
     @post = Post.new(post_params)
