@@ -25,3 +25,9 @@
 .hamburger-menu-links-hidden {
   display: none;
 }
+
+@media (max-width: 750px) {
+  .menu-link {
+    width: 100px;
+  }
+}
