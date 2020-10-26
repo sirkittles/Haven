@@ -89,7 +89,7 @@ function App() {
           <MakePost currentUser={currentUser} handlePostCreate={handlePostCreate} />
         </Route>
         <Route path="/users/:id/posts">
-          <MyPosts currentUser={currentUser} deletePost={deletePost} setIsDeleted={setIsDeleted} isDeleted={isDeleted} handleUpdatePost={handleUpdatePost} putPost={putPost} />
+          <MyPosts currentUser={currentUser} deletePost={deletePost} setIsDeleted={setIsDeleted} isDeleted={isDeleted} handleUpdatePost={handleUpdatePost} putPost={putPost} handleLogout={handleLogout} />
         </Route>
         <Route path="/posts/:id">
           <PostDetail currentUser={currentUser} />

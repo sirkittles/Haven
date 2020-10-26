@@ -24,6 +24,7 @@ const MakePost = (props) => {
   console.log(formData)
   return (
     <Layout currentUser={currentUser} >
+      <div className="floater"></div>
       <div className="form-container">
         <form onSubmit={(e) => {
           e.preventDefault()

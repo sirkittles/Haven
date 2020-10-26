@@ -23,14 +23,15 @@ const Post = (props) => {
     content: content
   });
   const [toggleEditForm, setToggleEditForm] = useState(false);
+  const [toggleViewComments, setToggleViewComments] = useState(false);
   const history = useHistory();
   // useEffect(() => {
   //   deleteUserPost();
   // }, [isDeleted])
   // comments ?
-  // const comment = comments.map(comment => (comment.content))
+  const comment = comments.map(comment => (comment.content))
   console.log(toggleEditForm);
-  console.log(username);
+  console.log(comments);
 
   const handleEditChange = (e) => {
     const { name, value } = e.target;
@@ -41,20 +42,19 @@ const Post = (props) => {
     })
   }
 
-  // const handleEditSubmit = (e) => {
-
-  // }
-
   return (
     <div className="post-container">
-      {console.log(editPost)}
       <div>{username}</div>
       <Link to={`/posts/${postId}`}>
         <img className="post-image" src={imgURL} alt={`${userId}'s post`} />
       </Link>
       <div>{content}</div>
       {location.pathname === "/homepage" && comments !== undefined && comments.length > 0 ? (
-        <button>View Comments</button>
+        <button onClick={() => setToggleViewComments(!toggleViewComments)}>
+          View Comments
+        </button>
+        
+        
       ) : (
         // comments.map((comment) => (
         //   <div className="comment-container" key={comment.id}>
@@ -63,6 +63,11 @@ const Post = (props) => {
         //   </div>
         // ))
         ""
+      )}
+      {toggleViewComments && (
+        <div className="comments-container">
+          {comment}
+        </div>
       )}
       {location.pathname === `/users/${userId}/posts` ? (
         <>

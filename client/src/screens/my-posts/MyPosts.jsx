@@ -7,7 +7,7 @@ import Post from "../../components/post/Post";
 const MyPosts = (props) => {
   const [allUserPosts, setAllUserPosts] = useState([]);
   // const [isDeleted, setIsDeleted] = useState(false);
-  const { currentUser, deletePost, isDeleted, setIsDeleted, handleUpdatePost, putPost } = props;
+  const { currentUser, deletePost, isDeleted, setIsDeleted, handleUpdatePost, putPost, handleLogout } = props;
   const { id } = useParams();
 
   useEffect(() => {
@@ -50,7 +50,7 @@ const MyPosts = (props) => {
   ))
 
   return (
-    <Layout currentUser={currentUser} >
+    <Layout currentUser={currentUser} handleLogout={handleLogout}>
       <div className="my-posts-container">
         <div className="my-posts">
           {myPostsJSX}
