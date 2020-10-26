@@ -4,9 +4,9 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc)
 
-    render json: @posts, :include => [:comments, :hashtags], status: :ok
+    render json: @posts, :include => [:user, :comments, :hashtags], status: :ok
   end
 
   # gets all posts of one user
