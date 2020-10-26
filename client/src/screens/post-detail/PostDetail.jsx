@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getOnePost } from "../../services/posts";
 import Layout from "../../components/shared/layout/Layout";
+import "./PostDetail.css";
 
 const PostDetail = (props) => {
   const { currentUser, handleLogout } = props;
@@ -51,6 +52,7 @@ const PostDetail = (props) => {
           </div>
         </>
       )}
+      <div className="floater"></div>
     </Layout>
   );
 };

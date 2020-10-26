@@ -46,12 +46,14 @@ const MyPosts = (props) => {
       isDeleted={isDeleted}
       handleUpdatePost={handleUpdatePost}
       putPost={putPost}
+      username={mypost.user?.username}
     />
   ))
 
   return (
     <Layout currentUser={currentUser} handleLogout={handleLogout}>
       <div className="my-posts-container">
+        <div className="floater"></div>
         <div className="my-posts">
           {myPostsJSX}
         </div>

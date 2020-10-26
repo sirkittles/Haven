@@ -11,7 +11,8 @@ const Post = (props) => {
     deleteUserPost,
     username,
     comments,
-    handleUpdatePost
+    handleUpdatePost,
+    post
   } = props;
 
   const location = useLocation();
@@ -35,7 +36,7 @@ const Post = (props) => {
       [name]: value
     })
   }
-
+  console.log(username)
   return (
     <div className="post-container">
       <div className="post-top"></div>
@@ -51,7 +52,7 @@ const Post = (props) => {
           View Comments
         </button>
       ) : (
-        ""
+          ""
       )}
       {toggleViewComments && (
         <div className="comments-container">

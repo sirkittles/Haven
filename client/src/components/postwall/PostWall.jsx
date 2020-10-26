@@ -25,6 +25,7 @@ const PostWall = (props) => {
       imgURL={post.img_url}
       content={post.content}
       userId={post.user_id}
+      post={post}
       username={post.user?.username}
       comments={post.comments}
     />

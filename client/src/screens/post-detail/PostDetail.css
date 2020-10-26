@@ -1,0 +1,10 @@
+.post-detail-container {
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+  margin: 20px auto 0px;
+}
+
+.post-detail-container img {
+  width: 100%;
+}

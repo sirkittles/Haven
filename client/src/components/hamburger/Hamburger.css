@@ -3,7 +3,7 @@
   flex-direction: column;
   position: absolute;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   z-index: 2;
   background-color: white;
 }
@@ -19,7 +19,12 @@
 .menu-link {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
+}
+
+.menu-link a {
+  text-decoration: none;
+  color: darkgrey;
 }
 
 .hamburger-menu-links-hidden {
