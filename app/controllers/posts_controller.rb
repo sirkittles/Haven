@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all.order(created_at: :desc)
 
-    render json: @posts, :include => [:user, :comments, :hashtags], status: :ok
+    render json: @posts.to_json(:include => [:user, :comments => {:include => :user}]), status: :ok
   end
 
   # gets all posts of one user

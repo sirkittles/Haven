@@ -9,7 +9,7 @@ import HomePage from "./screens/home-page/HomePage";
 import MakePost from "./screens/make-post/MakePost";
 import MyPosts from "./screens/my-posts/MyPosts";
 import PostDetail from "./screens/post-detail/PostDetail";
-import PostEdit from "./screens/post-edit/PostEdit";
+// import PostEdit from "./screens/post-edit/PostEdit";
 import { getAllPosts, postPost, deletePost, putPost } from "./services/posts";
 // import Layout from "./components/shared/layout/Layout";
 
@@ -95,9 +95,9 @@ function App() {
         <Route path="/posts/:id">
           <PostDetail currentUser={currentUser} handleLogout={handleLogout} onePost={onePost} setOnePost={setOnePost} />
         </Route>
-        <Route path="/post-edit">
+        {/* <Route path="/post-edit">
           <PostEdit currentUser={currentUser} />
-        </Route>
+        </Route> */}
       </Switch>
     </div>
   );

@@ -12,19 +12,19 @@ const Post = (props) => {
     username,
     comments,
     handleUpdatePost,
-    post
+    post,
   } = props;
 
   const location = useLocation();
   const [editPost, setEditPost] = useState({
     img_url: imgURL,
-    content: content
+    content: content,
   });
   const [toggleEditForm, setToggleEditForm] = useState(false);
   const [toggleViewComments, setToggleViewComments] = useState(false);
   const history = useHistory();
 
-  const comment = comments?.map(comment => (comment.content))
+  const comment = comments?.map((comment) => comment.content);
   console.log(toggleEditForm);
   console.log(comments);
 
@@ -33,10 +33,10 @@ const Post = (props) => {
     console.log(name, value);
     setEditPost({
       ...editPost,
-      [name]: value
-    })
-  }
-  console.log(username)
+      [name]: value,
+    });
+  };
+  console.log(username);
   return (
     <div className="post-container">
       <div className="post-top"></div>
@@ -46,18 +46,26 @@ const Post = (props) => {
           <img className="post-image" src={imgURL} alt={`${userId}'s post`} />
         </div>
       </Link>
-      <div className="post-content"><span className="post-username">{username}</span>{content}</div>
-      {location.pathname === "/homepage" && comments !== undefined && comments.length > 0 ? (
-        <button onClick={() => setToggleViewComments(!toggleViewComments)}>
-          View Comments
-        </button>
-      ) : (
+      <div className="post-content">
+        <span className="post-username">{username}</span>
+        {content}
+      </div>
+      <div className="comments-buttons-container">
+        {location.pathname === "/homepage" &&
+        comments !== undefined &&
+        comments.length > 0 ? (
+          <button
+            onClick={() => setToggleViewComments(!toggleViewComments)}
+            className="view-comments-button"
+          >
+            View Comments
+          </button>
+        ) : (
           ""
-      )}
+        )}
+      </div>
       {toggleViewComments && (
-        <div className="comments-container">
-          {comment}
-        </div>
+        <div className="comments-container">{comment}</div>
       )}
       {location.pathname === `/users/${userId}/posts` ? (
         <>
@@ -78,22 +86,22 @@ const Post = (props) => {
             {toggleEditForm && (
               <form
                 onSubmit={(e) => {
-                  e.preventDefault()
-                  handleUpdatePost(postId, editPost)
+                  e.preventDefault();
+                  handleUpdatePost(postId, editPost);
                 }}
               >
                 <label>
                   <input
-                    type='text'
-                    name='img_url'
+                    type="text"
+                    name="img_url"
                     value={editPost.img_url}
                     onChange={(e) => handleEditChange(e)}
                   />
                 </label>
                 <label>
                   <input
-                    type='text'
-                    name='content'
+                    type="text"
+                    name="content"
                     value={editPost.content}
                     onChange={(e) => handleEditChange(e)}
                   />
