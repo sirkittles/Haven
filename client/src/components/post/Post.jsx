@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useLocation, Link, useHistory } from "react-router-dom";
+import React, { useState } from "react";
+import { useLocation, Link } from "react-router-dom";
 import "./Post.css";
 
 const Post = (props) => {
@@ -12,7 +12,6 @@ const Post = (props) => {
     username,
     comments,
     handleUpdatePost,
-    post,
   } = props;
 
   const location = useLocation();
@@ -22,7 +21,7 @@ const Post = (props) => {
   });
   const [toggleEditForm, setToggleEditForm] = useState(false);
   const [toggleViewComments, setToggleViewComments] = useState(false);
-  const history = useHistory();
+  // const history = useHistory();
 
   const comment = comments?.map((comment) => comment.content);
   console.log(toggleEditForm);
