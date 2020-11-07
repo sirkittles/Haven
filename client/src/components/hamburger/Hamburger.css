@@ -1,0 +1,38 @@
+.hamburger-menu-links-visible {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 2;
+  background-color: white;
+}
+
+.hamburger-icon {
+  width: 50%;
+}
+
+.dropdown {
+  display: block;
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.menu-link a {
+  text-decoration: none;
+  color: darkgrey;
+}
+
+.hamburger-menu-links-hidden {
+  display: none;
+}
+
+@media (max-width: 750px) {
+  .menu-link {
+    width: 100px;
+  }
+}

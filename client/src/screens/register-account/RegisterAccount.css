@@ -1,0 +1,35 @@
+.register-header {
+  margin-top: 80px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+  margin: 0px auto;
+  align-items: center;
+}
+
+.reg-label-input {
+  margin-bottom: 10px;
+  display: flex;
+  max-width: 24vw;
+  width: 24vw;
+  align-items: space-between;
+}
+
+.register-input {
+  margin-left: 5px;
+}
+
+.register-input-email {
+  margin-left: 39px;
+}
+
+.register-submit {
+  width: 100px;
+  margin: 15px auto 0px;
+  border: 1px solid darkgrey;
+  border-radius: 4px;
+  height: 30px;
+}

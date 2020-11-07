@@ -1,0 +1,31 @@
+.landing-page-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.join-button {
+  width: 150px;
+  height: 40px;
+  font-size: 16px;
+}
+
+.sign-in-link-container {
+  margin-top: 20px;
+}
+
+.login-link {
+  text-decoration:none;
+}
+
+.login-link:visited {
+  text-decoration: none;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+.login-link:active {
+  text-decoration: underline;
+}

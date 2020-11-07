@@ -1,0 +1,28 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+  margin: 0px auto;
+  justify-content: center;
+}
+
+.create-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-form label {
+  margin-bottom: 15px;
+}
+
+.create-form input {
+  margin-left: 5px;
+}
+
+.create-submit {
+  width: 100px;
+  margin: 15px auto 0px;
+  border: 1px solid darkgrey;
+  border-radius: 4px;
+  height: 30px;
+}

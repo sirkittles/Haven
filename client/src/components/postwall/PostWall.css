@@ -1,0 +1,18 @@
+.postwall-container {
+  margin-top: 30px;
+  margin-bottom: 100px;
+}
+
+.posts-container {
+  display: flex;
+  flex-flow: row wrap;
+  width: 70vw;
+  margin: 0px auto;
+  align-items: flex-start;
+}
+
+@media (max-width: 750px) {
+  .postwall-container {
+    margin-top: 15px;
+  }
+}

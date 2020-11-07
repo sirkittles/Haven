@@ -1,0 +1,39 @@
+.login-content-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 150px;
+}
+
+/* .login-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+} */
+
+.login-form {
+  display: block;
+}
+
+.password-container {
+  margin-top: 10px;
+}
+
+.login-form input {
+  margin-left: 10px;
+}
+
+.login-button {
+  width: 100px;
+  margin: 15px auto 0px;
+  border: 1px solid darkgrey;
+  border-radius: 4px;
+  height: 30px;
+}
+
+.login-content-container span {
+  margin-top: 10px;
+}
+
+.join-link {
+  color: blue;
+}
